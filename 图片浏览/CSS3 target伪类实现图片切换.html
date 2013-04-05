@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html;charset=gbk" >
+    <title>:target</title>
+	<style>
+		#bigImg{
+			width:502px;
+			height:502px;
+			overflow:hidden;
+		}
+		#bigImg img{
+			width:500px;
+			height:500px;
+			border:1px solid red;
+		}
+		#thumbnail img{
+			border:1px solid red;
+			width:100px;
+			height:100px;
+		}
+		a{	/*去掉超链接的下划线*/
+			text-decoration:none;
+		}
+	</style>
+  </head>
+  <body>
+	不用JS，不用target伪类也能实现图片切换。<br/>
+	<div id="bigImg">
+		<img id="1" src="1.png" />
+		<img id="2" src="2.png" />
+		<img id="3" src="3.png" />
+		<img id="4" src="4.png" />
+	</div>
+	<div id="thumbnail">
+		<a  href="#1"> <img src="1.png" /> </a>
+		<a  href="#2"> <img src="2.png" /> </a>
+		<a  href="#3"> <img src="3.png" /> </a>
+		<a  href="#4"> <img src="4.png" /> </a>
+	</div>
+  </body>
+</html>

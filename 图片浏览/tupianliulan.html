@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <meta name="generator"
+    content="HTML Tidy for HTML5 (experimental) for Windows https://github.com/w3c/tidy-html5/tree/c63cc39" />
+    <title>JavaScript图片浏览器</title>
+	<style>
+		div,img{
+			border:1px solid red;
+		}
+		#content{
+			width:80%;
+			height:70%;
+			margin:auto;
+		}
+		#thumbnail{
+			width:80%;
+			height:29%;
+			margin:auto;
+		}
+		#leftButton, #rightButton{
+			width:100px;
+			height:100px;
+			text-align:center;
+			line-height:100px;
+			margin-top:20px;
+		}
+		#leftButton{
+			float:left;
+		}
+		#rightButton{
+			float:right;
+		}
+		img.thumb{
+			width:100px;
+			height:100px;
+			margin:10px;
+		}
+		#BigImg{
+			width:300px;
+			height:300px;
+			margin:auto;
+		}
+	</style>
+	<script>
+		onload = function(){
+			imgCount = 0;
+			change = function(src){
+				BigImg.src=src;
+			}
+			leftButtonClicked = function(){
+				//这里可以在实际运用时从服务器获取图片的地址。
+				changePictures( ['1.png','2.png','3,png'] );
+			}
+			rightButtonClicked = function(){
+				changePictures( ['3.png','4.png'] );
+			}
+			changePictures = function( arr ){
+				var pics = '<div id="leftButton" onclick="leftButtonClicked()"><<</div><div id="rightButton" onclick="rightButtonClicked()">>></div>';
+				for(item in arr){
+					pics += '<img class="thumb"  src="' + arr[item] + '" onclick="change(this.src)"></img>';
+				}
+				thumbnail.innerHTML = pics;
+			}
+		}
+	</script>
+  </head
+  <body>
+	<div id="content">
+		<img id="BigImg" src="1.png"/>
+	</div>
+	<div id="thumbnail">
+		<div id="leftButton" onclick="leftButtonClicked()"><<</div>
+		<img class="thumb"  src="1.png" onclick="change(this.src)"></img>
+		<img class="thumb"  src="2.png" onclick="change(this.src)"></img>
+		<div id="rightButton" onclick="rightButtonClicked()">>></div>
+	</div>
+  </body>
+</html>
